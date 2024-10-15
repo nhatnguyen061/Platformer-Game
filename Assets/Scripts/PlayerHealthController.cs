@@ -54,7 +54,10 @@ public class PlayerHealthController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
+
+                //gọi lệnh chờ thời gian phản hồi để hồi sinh
+                LevelManager.instance.RespawnPlayer();
             }
             else
             {
