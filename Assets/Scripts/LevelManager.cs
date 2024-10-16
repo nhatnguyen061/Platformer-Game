@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour
 
     //khi chết thì chờ thời gian để hồi sinh
     public float waitToRespawn;
+
+    public int gemsCollected;
     private void Awake()
     {
         instance = this;
