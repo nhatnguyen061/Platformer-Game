@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
+    public float bounceForce;
+
+
     private void Awake()
     {
         instance = this;
@@ -53,13 +56,17 @@ public class PlayerController : MonoBehaviour
                 if (isGrounded)
                 {
                     theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                    AudioManager.instance.PlaySFX(11);
+
                     canDoubleJump = true;
+
                 }
                 else
                 {
                     if (canDoubleJump)
                     {
                         theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                        AudioManager.instance.PlaySFX(11);
                         canDoubleJump = false;
                     }
                 }
@@ -101,6 +108,13 @@ public class PlayerController : MonoBehaviour
         //khi vừa chạm vào bẫy thì sẽ dừng di chuyển, nhảy lên với lục knockForce
         theRB.velocity = new Vector2(0f, knockBackForce);
 
+
+    }
+
+    public void Bounce()
+    {
+        theRB.velocity = new Vector2(theRB.velocity.x, bounceForce);
+        AudioManager.instance.PlaySFX(11);
 
     }
 }

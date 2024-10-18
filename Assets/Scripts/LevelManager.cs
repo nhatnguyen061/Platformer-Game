@@ -38,6 +38,8 @@ public class LevelManager : MonoBehaviour
     {
         //player duoc gan script PlayerController
         PlayerController.instance.gameObject.SetActive(false);
+        AudioManager.instance.PlaySFX(9);
+
         //khi thực hiện hàm trên thì chờ một thời gian với hàm yield
         yield return new WaitForSeconds(waitToRespawn);
 
