@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &42148128
 RectTransform:
   m_ObjectHideFlags: 0
@@ -802,6 +802,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 42148128}
     m_Modifications:
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 860445561}
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1632985562515040948, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
       propertyPath: m_Name
       value: Main Menu Button
@@ -1251,6 +1263,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 42148128}
     m_Modifications:
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 860445561}
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseUnpause
+      objectReference: {fileID: 0}
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1632985562515040948, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
       propertyPath: m_Name
       value: Resume Button
@@ -2194,6 +2238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelSelect: 
   mainMenu: Main_Menu
+  pauseScreen: {fileID: 42148127}
+  isPause: 0
 --- !u!1 &1061478908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,6 +3112,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 42148128}
     m_Modifications:
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 860445561}
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 74826455331761728, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1632985562515040948, guid: 4c62ed2dfdd5ed14c967411e9939d577, type: 3}
       propertyPath: m_Name
       value: Level Button
