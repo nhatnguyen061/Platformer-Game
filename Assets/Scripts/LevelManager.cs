@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public float waitToRespawn;
 
     public int gemsCollected;
+    public string levelToLoad;
     private void Awake()
     {
         instance = this;
@@ -38,10 +40,14 @@ public class LevelManager : MonoBehaviour
     {
         //player duoc gan script PlayerController
         PlayerController.instance.gameObject.SetActive(false);
-        AudioManager.instance.PlaySFX(9);
+        AudioManager.instance.PlaySFX(8);
 
         //khi thực hiện hàm trên thì chờ một thời gian với hàm yield
-        yield return new WaitForSeconds(waitToRespawn);
+        yield return new WaitForSeconds(waitToRespawn - (1f / UIController.instance.fadeSpeed));
+        UIController.instance.FadeToBlack();
+
+        yield return new WaitForSeconds((1f / UIController.instance.fadeSpeed)+.2f);
+        UIController.instance.FadeFromBlack();
 
         PlayerController.instance.gameObject.SetActive(true);
         PlayerController.instance.transform.position = CheckpointController.instance.spawnPoint;
@@ -50,6 +56,25 @@ public class LevelManager : MonoBehaviour
         PlayerHealthController.instance.currentHealth = PlayerHealthController.instance.maxHealth;
         UIController.instance.UpdateHealthDisplay();
 
+    }
+
+    public void EndLevel()
+    {
+        StartCoroutine(EndLevelCo());
+    }
+    public IEnumerator EndLevelCo()
+    {
+        //set stop input để dừng di chuyển và làm màn hình mờ dần
+        PlayerController.instance.stopInput = true;
+        CameraController.instance.stopFollow = true;
+
+        UIController.instance.levelCompleteText.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+
+        UIController.instance.FadeToBlack();
+        yield return new WaitForSeconds((1f / UIController.instance.fadeSpeed) + .25f);
+
+        SceneManager.LoadScene(levelToLoad);
     }
 
 }

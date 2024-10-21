@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     public float bounceForce;
+    //ngăn di chuyển khi chạm vào lá cờ end level
+    public bool stopInput;
 
 
     private void Awake()
@@ -44,62 +46,66 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //đầu tiên k dẫm bẫy sẽ là 0, khi dẫm bẫy sẽ set lại thời gian length là 1 là bị đẩy lùi, còn dưới 0 thì đi bình thường
-        if (knockBackCounter <= 0)
+        if (!PauseMenu.instance.isPause && !stopInput)
         {
-            theRB.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), theRB.velocity.y);
-            //biến kiểm tra xem player đã chạm tới ground hay chưa
-            isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, .2f, whatIsGround);
-
-            if (Input.GetButtonDown("Jump"))
+            //đầu tiên k dẫm bẫy sẽ là 0, khi dẫm bẫy sẽ set lại thời gian length là 1 là bị đẩy lùi, còn dưới 0 thì đi bình thường
+            if (knockBackCounter <= 0)
             {
-                if (isGrounded)
-                {
-                    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-                    AudioManager.instance.PlaySFX(11);
+                theRB.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), theRB.velocity.y);
+                //biến kiểm tra xem player đã chạm tới ground hay chưa
+                isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, .2f, whatIsGround);
 
-                    canDoubleJump = true;
-
-                }
-                else
+                if (Input.GetButtonDown("Jump"))
                 {
-                    if (canDoubleJump)
+                    if (isGrounded)
                     {
                         theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
                         AudioManager.instance.PlaySFX(11);
-                        canDoubleJump = false;
-                    }
-                }
 
-            }
-            //set condition để chuyển trạng thái của player
-            if (theRB.velocity.x < 0)
-            {
-                theSR.flipX = true;
-            }
-            if (theRB.velocity.x > 0)
-            {
-                theSR.flipX = false;
-            }
-        }
-        else
-        {
-            knockBackCounter -= Time.deltaTime;
-            //nếu đang đi về phái trước thì bị đầy lùi, còn đi về phía sau thì bị đẩy tới. Và bị đẩy lùi trong thời gian set là 0.25 giây
-            if (!theSR.flipX)
-            {
-                theRB.velocity = new Vector2(-knockBackForce, theRB.velocity.y);
+                        canDoubleJump = true;
+
+                    }
+                    else
+                    {
+                        if (canDoubleJump)
+                        {
+                            theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                            AudioManager.instance.PlaySFX(11);
+                            canDoubleJump = false;
+                        }
+                    }
+
+                }
+                //set condition để chuyển trạng thái của player
+                if (theRB.velocity.x < 0)
+                {
+                    theSR.flipX = true;
+                }
+                if (theRB.velocity.x > 0)
+                {
+                    theSR.flipX = false;
+                }
             }
             else
             {
-                theRB.velocity = new Vector2(knockBackForce, theRB.velocity.y);
+                knockBackCounter -= Time.deltaTime;
+                //nếu đang đi về phái trước thì bị đầy lùi, còn đi về phía sau thì bị đẩy tới. Và bị đẩy lùi trong thời gian set là 0.25 giây
+                if (!theSR.flipX)
+                {
+                    theRB.velocity = new Vector2(-knockBackForce, theRB.velocity.y);
+                }
+                else
+                {
+                    theRB.velocity = new Vector2(knockBackForce, theRB.velocity.y);
+                }
             }
+
+            //set chạy khi vận tốc >0
+            anim.SetFloat("moveSpeed", Mathf.Abs(theRB.velocity.x));
+            // set  nhảy khi chạm đất = false
+            anim.SetBool("isGrounded", isGrounded);
         }
         
-        //set chạy khi vận tốc >0
-        anim.SetFloat("moveSpeed", Mathf.Abs(theRB.velocity.x));
-        // set  nhảy khi chạm đất = false
-        anim.SetBool("isGrounded", isGrounded);
     }
 
     public void KnockBack()
