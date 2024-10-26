@@ -46,7 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitToRespawn: 2
   gemsCollected: 0
-  levelToLoad: Main_Menu
+  levelToLoad: Level Select
+  timeInLevel: 0
 --- !u!1 &2118208751145097241
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4770484781793654049
 RectTransform:
   m_ObjectHideFlags: 0
@@ -527,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581c87faee29aa547b77a5166014c3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSelect: 
+  levelSelect: Level Select
   mainMenu: Main_Menu
   pauseScreen: {fileID: 6703996387963605268}
   isPause: 0
@@ -1554,11 +1555,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5770403744523581705, guid: befb8bf615e2c5a4692f421ebc3c4835, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -67.15
+      value: -70.53
       objectReference: {fileID: 0}
     - target: {fileID: 5770403744523581705, guid: befb8bf615e2c5a4692f421ebc3c4835, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.21
+      value: -5.72
       objectReference: {fileID: 0}
     - target: {fileID: 5770403744523581705, guid: befb8bf615e2c5a4692f421ebc3c4835, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2143,11 +2144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753078255652340924, guid: c649688aec4a70b4ea44cbf2b01342d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.49968
+      value: -19.19
       objectReference: {fileID: 0}
     - target: {fileID: 5753078255652340924, guid: c649688aec4a70b4ea44cbf2b01342d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0029273
+      value: -1.96
       objectReference: {fileID: 0}
     - target: {fileID: 5753078255652340924, guid: c649688aec4a70b4ea44cbf2b01342d4, type: 3}
       propertyPath: m_LocalPosition.z

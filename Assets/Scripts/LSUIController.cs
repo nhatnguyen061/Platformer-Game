@@ -10,6 +10,8 @@ public class LSUIController : MonoBehaviour
     public Image fadeScreen;
     public float fadeSpeed;
     private bool shouldFadeToBlack, shouldFadeFromBlack;
+    public GameObject levelInfoPanel;
+    public Text levelName, gemsFound, gemsTarger, bestTime, timeTarget;
     public void Awake()
     {
         instance = this;
@@ -54,5 +56,26 @@ public class LSUIController : MonoBehaviour
     {
         shouldFadeFromBlack = true;
         shouldFadeToBlack = false;
+    }
+    public void ShowInfo(MapPoint levelInfo)
+    {
+        levelName.text = levelInfo.levelName;
+        gemsFound.text = "FOUND: " + levelInfo.gemsCollected;
+        gemsTarger.text = "IN LEVEL: " + levelInfo.totalGems;
+        timeTarget.text = "TARGET: " + levelInfo.targetTime + "s";
+        if(levelInfo.bestTime == 0)
+        {
+            bestTime.text = "BEST: ___";
+        }
+        else
+        {
+            bestTime.text = "BEST: " + levelInfo.bestTime.ToString("F1") + "s";
+        }
+
+        levelInfoPanel.SetActive(true);
+    }
+    public void HideInfo()
+    {
+        levelInfoPanel.SetActive(false);
     }
 }

@@ -18,6 +18,7 @@ public class LSPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check vi tri hien tai cua player voi currentpoint va check xem currentpoint # levelLoading
         transform.position = Vector3.MoveTowards(transform.position, currentPoint.transform.position, moveSpeed * Time.deltaTime);
         if(Vector3.Distance(transform.position, currentPoint.transform.position) < .1f && ! levelLoading)
         {
@@ -57,8 +58,10 @@ public class LSPlayer : MonoBehaviour
         }
 
         }
-        if(currentPoint.isLevel)
+        if(currentPoint.isLevel && currentPoint.levelToLoad != "" && !currentPoint.isLocked )   
         {
+            // show levelname in the current point
+            LSUIController.instance.ShowInfo(currentPoint);
             if(Input.GetButtonDown("Jump"))
             {
 
@@ -70,5 +73,9 @@ public class LSPlayer : MonoBehaviour
     public void SetNextPoint(MapPoint nextPoint)
     {
         currentPoint = nextPoint;
+        // move to next point hide past point
+        LSUIController.instance.HideInfo();
+        AudioManager.instance.PlaySFX(5);
+        
     }
 }
