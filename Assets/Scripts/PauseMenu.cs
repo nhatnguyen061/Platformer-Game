@@ -48,7 +48,10 @@ public class PauseMenu : MonoBehaviour
 
     public void LevelSelect()
     {
+        // Set the current scene
+        PlayerPrefs.SetString("Current Level", SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(levelSelect);
+        Time.timeScale = 1f;
     }
      
     public void MainMenu()

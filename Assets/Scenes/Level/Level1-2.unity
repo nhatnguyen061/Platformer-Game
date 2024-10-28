@@ -8429,13 +8429,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.48
       objectReference: {fileID: 0}
-    - target: {fileID: 7694497216286586617, guid: 41a00764ec8cebb438ee7a4c69f4ff37, type: 3}
-      propertyPath: m_Size.x
-      value: 146.30258
-      objectReference: {fileID: 0}
-    - target: {fileID: 7694497216286586617, guid: 41a00764ec8cebb438ee7a4c69f4ff37, type: 3}
-      propertyPath: m_Offset.x
-      value: 50.192627
+    - target: {fileID: 3345067730622496292, guid: 41a00764ec8cebb438ee7a4c69f4ff37, type: 3}
+      propertyPath: levelToLoad
+      value: Level Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
