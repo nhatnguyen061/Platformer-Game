@@ -125,10 +125,10 @@ TextureImporter:
       name: eagle-attack_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 39
-        height: 41
+        x: 3
+        y: 2
+        width: 32
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,10 +146,10 @@ TextureImporter:
       name: eagle-attack_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 0
-        width: 39
-        height: 41
+        x: 43
+        y: 3
+        width: 35
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,10 +167,10 @@ TextureImporter:
       name: eagle-attack_2
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 39
-        height: 41
+        x: 82
+        y: 2
+        width: 28
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,10 +188,10 @@ TextureImporter:
       name: eagle-attack_3
       rect:
         serializedVersion: 2
-        x: 120
-        y: 0
-        width: 39
-        height: 41
+        x: 122
+        y: 2
+        width: 31
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

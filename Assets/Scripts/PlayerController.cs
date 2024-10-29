@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
 
     public float moveSpeed;
-    private Rigidbody2D theRB;
+    public Rigidbody2D theRB;
     public float jumpForce;
 
 
@@ -122,5 +122,21 @@ public class PlayerController : MonoBehaviour
         theRB.velocity = new Vector2(theRB.velocity.x, bounceForce);
         AudioManager.instance.PlaySFX(11);
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Platform")
+        {
+            transform.parent = other.transform;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Platform")
+        {
+            transform.parent = null;
+        }
     }
 }
