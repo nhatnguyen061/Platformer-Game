@@ -10135,6 +10135,18 @@ PrefabInstance:
       propertyPath: isLocked
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6800953208759939061, guid: 7c2b19c51d3e22644988d088110a58db, type: 3}
+      propertyPath: levelName
+      value: Battle The Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800953208759939061, guid: 7c2b19c51d3e22644988d088110a58db, type: 3}
+      propertyPath: levelToLoad
+      value: Boss-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800953208759939061, guid: 7c2b19c51d3e22644988d088110a58db, type: 3}
+      propertyPath: levelToCheck
+      value: Level1-6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10567,6 +10579,18 @@ PrefabInstance:
     - target: {fileID: 6800953208759939061, guid: 7c2b19c51d3e22644988d088110a58db, type: 3}
       propertyPath: isLocked
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800953208759939061, guid: 7c2b19c51d3e22644988d088110a58db, type: 3}
+      propertyPath: levelName
+      value: '6: Prepare abttle Boss'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800953208759939061, guid: 7c2b19c51d3e22644988d088110a58db, type: 3}
+      propertyPath: levelToLoad
+      value: Level1-5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800953208759939061, guid: 7c2b19c51d3e22644988d088110a58db, type: 3}
+      propertyPath: levelToCheck
+      value: Level1-6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
